@@ -8,13 +8,10 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ## Participantes
 ### 🚀 Líder Técnico
-[NOME e GITHUB]
+[JEFERSON RODRIGO DE ALMEIDA e https://github.com/jefersonrodrigal]
 
 ### 👻 Caçadores de Bugs
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
+* [JEFERSON RODRIGO DE ALMEIDA e https://github.com/jefersonrodrigal]
 
 ## ⚙️ Tecnologias
 * C# 12
