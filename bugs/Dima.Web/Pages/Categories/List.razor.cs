@@ -33,6 +33,13 @@ public partial class ListCategoriesPage : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
+
+        /*
+            A propriedade  Categories não estava de fato inicializada, correção aplicada no metodo na linha 41
+        */
+
+        Categories = new List<Category>();
+
         IsBusy = true;
         try
         {

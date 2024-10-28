@@ -12,7 +12,15 @@ public class CategoryHandler(IHttpClientFactory httpClientFactory) : ICategoryHa
 
     public async Task<Response<Category?>> CreateAsync(CreateCategoryRequest request)
     {
-        var result = await _client.PutAsJsonAsync("v1/categories", request);
+        /*
+         * O metodo CreateAsync da aplicação estava enviando requisições PUT
+            gerando a excessão evidenciada pelo frontend "The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0."
+            Com isso estava ocorrendo o erro validado pelo console do navegador
+            'PUT http://localhost:5164/v1/categories 405 (Method Not Allowed)'
+          * No metodo CreateAsync responsavel por enviar a requisição para o Backend deve se alterar na linha 23 o tipo de requisição enviada passar
+            de PutAsJsonAsync para PostAsJsonAsync com essa alteração o backend consegue tratar as requisições post enviadas.
+        */
+        var result = await _client.PostAsJsonAsync("v1/categories", request);
         return await result.Content.ReadFromJsonAsync<Response<Category?>>()
                ?? new Response<Category?>(null, 400, "Falha ao criar a categoria");
     }

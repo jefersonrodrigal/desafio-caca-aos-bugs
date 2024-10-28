@@ -7,6 +7,7 @@ using Dima.Core.Requests.Transactions;
 using Dima.Core.Responses;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
+using Stripe.V2;
 
 namespace Dima.Api.Handlers;
 
@@ -21,7 +22,7 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
         {
             var transaction = new Transaction
             {
-                UserId = "test@balta.io",
+                UserId = request.UserId,
                 CategoryId = request.CategoryId,
                 CreatedAt = DateTime.Now,
                 Amount = request.Amount,
@@ -30,8 +31,18 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
                 Type = request.Type
             };
 
-            context.Transactions.AddAsync(transaction);
-            context.SaveChangesAsync();
+            /* 
+               Na criação do objeto transaction a propriedade UserId estava recebendo em hardcoded a string "teste@balta.io" com isso o insert não estava 
+               sendo feito corretamente para o usuario que de fato cadastrava a transação.
+            */
+
+            await context.Transactions.AddAsync(transaction);
+            await context.SaveChangesAsync();
+
+            /*
+             O metodo CreateAsync deve ser composto em seu corpo da palavra-chave await pois se não nunca
+             haverá um retorno por isso as Transações não estavam sendo cadastradas e respectivamente listadas para o usuario.
+            */
 
             return new Response<Transaction?>(transaction, 201, "Transação criada com sucesso!");
         }
@@ -43,7 +54,35 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
 
     public async Task<Response<Transaction?>> UpdateAsync(UpdateTransactionRequest request)
     {
-        throw new NotImplementedException();
+        /*
+            O metodo em si lança um exception 'NotImplementedException();', não havendo implementação de atualização de transação.
+            Realizada a implementação para o metodo atualizar a transação.
+        */
+        try
+        {
+            var transaction = await context.Transactions.FirstOrDefaultAsync(t => t.Id == request.Id && t.UserId == t.UserId);
+
+            if(transaction is null)
+            {
+                return new Response<Transaction?>(null, 404, "Transação não encontrada.");
+            }
+
+            transaction.Title = request.Title;
+            transaction.Type = request.Type;
+            transaction.Amount = request.Amount;
+            transaction.CategoryId = request.CategoryId;
+            transaction.PaidOrReceivedAt = request.PaidOrReceivedAt;
+
+            context.Transactions.Update(transaction);
+            await context.SaveChangesAsync();
+
+            return new Response<Transaction?>(transaction, 200, "Transação atualizada com sucesso!");
+        }
+        catch
+        {
+            return new Response<Transaction?>(null, 500, "Não foi possível atualizar sua transação");
+        }
+
     }
 
     public async Task<Response<Transaction?>> DeleteAsync(DeleteTransactionRequest request)
