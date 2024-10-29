@@ -29,6 +29,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ## 🧪 Como testar o projeto
 [DESCREVER COMO EXECUTAR O PROJETO]
+* No diretorio onde o projeto foi clonado digitar os comandos abaixo.
 * dotnet clean
 * dotnet restore
 * dotnet build
