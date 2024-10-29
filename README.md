@@ -29,6 +29,22 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ## 🧪 Como testar o projeto
 [DESCREVER COMO EXECUTAR O PROJETO]
+* dotnet clean
+* dotnet restore
+* dotnet build
+
+* Com um banco de dados SQL Server rodando
+* Criar o Database
+* Setar a conectionstring no appsettings e realizar os passos a seguir
+* Abrir um terminal no diretório onde o projeto foi clonado, digitar o comando
+* cd Dima.Api
+* Em seguida digitar o comando abaixo para incluir as migrations
+* dotnet ef database update e logo em seguida digitar o moamndo abaixo.
+* dotnet run
+
+* Abrir um  novo terminal no diretório onde o projeto foi clonado, digitar o comando
+* cd Dima.Web
+* dotnet run
 
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)
