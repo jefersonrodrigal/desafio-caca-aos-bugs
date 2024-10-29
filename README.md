@@ -37,7 +37,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 * Com um banco de dados SQL Server rodando
 * Criar o Database
 
-* No terminal dentro do diretorio desafio-caca-aos-bugs\bugs realizar o comando abaixo
+* No terminal dentro do diretorio <strong>desafio-caca-aos-bugs\bugs</strong> realizar o comando abaixo
 * cd .\Dima.Api\
 * Abrir o projeto em um editor de codigo e setar a string de conexão no arquivo appsettings.json
 * Em seguida no terminal dentro do diretorio Dima.Api\ digitar o comando abaixo para incluir as migrations
