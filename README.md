@@ -34,8 +34,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 * dotnet restore
 * dotnet build
 
-* Com um banco de dados SQL Server rodando
-* Criar o Database
+* Certifique-se de ter um SQL Server rodando
 
 * No terminal dentro do diretorio <b>desafio-caca-aos-bugs\bugs</b> realizar o comando abaixo
 * cd .\Dima.Api\
