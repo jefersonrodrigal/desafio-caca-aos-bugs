@@ -14,7 +14,7 @@ public static class BuilderExtension
     public static void AddConfiguration(
         this WebApplicationBuilder builder)
     {
-        Configuration.ConnectionString = builder.Configuration["DefaultConnection"] ?? string.Empty;
+        Configuration.ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
         Configuration.BackendUrl = builder.Configuration.GetValue<string>("BackendUrl") ?? string.Empty;
         Configuration.FrontendUrl = builder.Configuration.GetValue<string>("FrontendUrl") ?? string.Empty;
         ApiConfiguration.StripeApiKey = builder.Configuration.GetValue<string>("StripeApiKey") ?? string.Empty;

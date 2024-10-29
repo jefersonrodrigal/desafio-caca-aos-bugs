@@ -1,3 +1,5 @@
+/*Correção Bug 2 - Erro na Home do App */
+
 CREATE OR ALTER VIEW [vwGetExpensesByCategory] AS
     SELECT
         [Transaction].[UserId],

@@ -5,9 +5,7 @@ using Dima.Core.Handlers;
 using Dima.Core.Models;
 using Dima.Core.Requests.Transactions;
 using Dima.Core.Responses;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
-using Stripe.V2;
 
 namespace Dima.Api.Handlers;
 
@@ -32,6 +30,8 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
             };
 
             /* 
+             *  Correção Bug 5 - Transação é criada mas não aparece
+             
                Na criação do objeto transaction a propriedade UserId estava recebendo em hardcoded a string "teste@balta.io" com isso o insert não estava 
                sendo feito corretamente para o usuario que de fato cadastrava a transação.
             */
@@ -40,6 +40,8 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
             await context.SaveChangesAsync();
 
             /*
+             * Correção Bug 5 - Transação é criada mas não aparece
+
              O metodo CreateAsync deve ser composto em seu corpo da palavra-chave await pois se não nunca
              haverá um retorno por isso as Transações não estavam sendo cadastradas e respectivamente listadas para o usuario.
             */
@@ -55,7 +57,9 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
     public async Task<Response<Transaction?>> UpdateAsync(UpdateTransactionRequest request)
     {
         /*
-            O metodo em si lança um exception 'NotImplementedException();', não havendo implementação de atualização de transação.
+         *  Correção - Bug 6 - Atualização de uma transação não funciona
+        
+            O metodo em si lançava um exception 'NotImplementedException();', não havendo implementação de atualização de transação.
             Realizada a implementação para o metodo atualizar a transação.
         */
         try

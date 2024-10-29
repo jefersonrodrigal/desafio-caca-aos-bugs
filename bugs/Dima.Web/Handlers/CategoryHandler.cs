@@ -12,7 +12,8 @@ public class CategoryHandler(IHttpClientFactory httpClientFactory) : ICategoryHa
 
     public async Task<Response<Category?>> CreateAsync(CreateCategoryRequest request)
     {
-        /*
+        /* Correção Bug 4 - Categoria não é criada
+         * 
          * O metodo CreateAsync da aplicação estava enviando requisições PUT
             gerando a excessão evidenciada pelo frontend "The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0."
             Com isso estava ocorrendo o erro validado pelo console do navegador

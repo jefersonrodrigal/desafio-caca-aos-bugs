@@ -35,6 +35,7 @@ public partial class ListCategoriesPage : ComponentBase
     {
 
         /*
+         *  Correção Bug 3 - Categorias não lista
             A propriedade  Categories não estava de fato inicializada, correção aplicada no metodo na linha 41
         */
 
