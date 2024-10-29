@@ -36,18 +36,24 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 * Com um banco de dados SQL Server rodando
 * Criar o Database
+
+* No terminal dentro do diretorio desafio-caca-aos-bugs\bugs realizar o comando abaixo
+* cd .\Dima.Api\
+* Abrir o projeto em um editor de codigo e setar a string de conexão no arquivo appsettings.json
+* Em seguida no terminal dentro do diretorio Dima.Api\ digitar o comando abaixo para incluir as migrations
+* dotnet ef database update
 * Em seguida ir ao diretorio desafio-caca-aos-bugs\bugs\Dima.Api\Data\Views
 * Rodar as Views no banco criado
-* Setar a conectionstring no appsettings e realizar os passos a seguir
 * Abrir um terminal no caminho desafio-caca-aos-bugs\bugs e digitar o comando
 * cd Dima.Api
-* Em seguida digitar o comando abaixo para incluir as migrations
-* dotnet ef database update e logo em seguida digitar o moamndo abaixo.
 * dotnet run
 
 * Abrir um novo terminal no caminho desafio-caca-aos-bugs\bugs e digitar o comando
 * cd Dima.Web
 * dotnet run
+
+* Com a aplicação rodando acessar o endereço http://localhost:5028
+* Cadastrar um novo usuario e realizar o Login na aplicação
 
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)
