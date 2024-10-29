@@ -29,7 +29,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ## 🧪 Como testar o projeto
 
-* No diretorio desafio-caca-aos-bugs\bugs abrir um terminal digitar os comandos abaixo.
+* No diretorio <b>desafio-caca-aos-bugs\bugs</b> abrir um terminal digitar os comandos abaixo.
 * dotnet clean
 * dotnet restore
 * dotnet build
