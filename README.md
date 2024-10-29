@@ -40,7 +40,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 * No terminal dentro do diretorio <b>desafio-caca-aos-bugs\bugs</b> realizar o comando abaixo
 * cd .\Dima.Api\
 * Abrir o projeto em um editor de codigo e setar a string de conexão no arquivo appsettings.json
-* Em seguida no terminal dentro do diretorio <b>Dima.Api\</b> digitar o comando abaixo para incluir as migrations
+* Em seguida no terminal dentro do diretorio <b>desafio-caca-aos-bugs\bugs\Dima.Api</b> digitar o comando abaixo para incluir as migrations
 * dotnet ef database update
 * Em seguida ir ao diretorio <b>desafio-caca-aos-bugs\bugs\Dima.Api\Data\Views</b>
 * Rodar as Views no banco criado
