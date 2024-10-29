@@ -28,7 +28,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 * Muito conhecimento técnico
 
 ## 🧪 Como testar o projeto
-[DESCREVER COMO EXECUTAR O PROJETO]
+
 * No diretorio onde o projeto foi clonado digitar os comandos abaixo.
 * dotnet clean
 * dotnet restore
@@ -36,14 +36,16 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 * Com um banco de dados SQL Server rodando
 * Criar o Database
+* Em seguida ir ao diretorio desafio-caca-aos-bugs\bugs\Dima.Api\Data\Views
+* Rodar as Views no banco criado
 * Setar a conectionstring no appsettings e realizar os passos a seguir
-* Abrir um terminal no diretório onde o projeto foi clonado, digitar o comando
+* Abrir um terminal no caminho desafio-caca-aos-bugs\bugs e digitar o comando
 * cd Dima.Api
 * Em seguida digitar o comando abaixo para incluir as migrations
 * dotnet ef database update e logo em seguida digitar o moamndo abaixo.
 * dotnet run
 
-* Abrir um  novo terminal no diretório onde o projeto foi clonado, digitar o comando
+* Abrir um novo terminal no caminho desafio-caca-aos-bugs\bugs e digitar o comando
 * cd Dima.Web
 * dotnet run
 
